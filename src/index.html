@@ -1,13 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Rahul Sethi</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Use the compiled CSS output; your bundler should emit main.css from SCSS -->
+  <!-- <link rel="stylesheet" href="./css/main.scss"> -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header id="top" class="site-header">
+    <nav id="navbar" class="nav">
+        <a href="#intro" class="logo" aria-label="Go to top">
+            <svg class="logo-mark" width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="6"/>
+                <text x="50%" y="55%" text-anchor="middle" fill="currentColor"
+                    font-size="42" font-family="Inter, sans-serif" font-weight="700" dy=".1em">RS</text>
+            </svg>
+        </a> 
+        <ul class="nav-links">
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#experience">Work Experience</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#education">Education</a></li>
+        <li><a class="nav-link" href="#documents">Documents</a></li>
+        <li><a class="nav-link" href="#video">Demo</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="read-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+    </nav>
+    </header>
+
+    <!-- ===== intro (full-bleed stripe, vertical centering) ===== -->
+    <section id="intro" class="stripe intro">
+    <div class="intro-inner">
+        <h1 class="intro-title">Hi, I’m <span class="accent">Rahul Sethi</span> <br> Code. Build. Ship. Repeat.</h1>
+        <p class="intro-subtitle"> Distributed Systems • Full Stack • Machine Learning</p>
+        <div class="intro-cta">
+        <a href="#projects" class="btn primary">See my work</a>
+        <a href="#contact" class="btn ghost">Get in touch</a>
+        </div>
+        <div class="intro-social" aria-label="social links">
+        <a href="https://www.linkedin.com/in/rahul-07-sethi/" aria-label="LinkedIn" class="social-link" target="_blank">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.5c0-1.55-.03-3.55-2.17-3.55-2.18 0-2.51 1.7-2.51 3.44V23h-3.79V8.5z"/></svg>
+        </a>
+        <a href="https://github.com/RahulSethi07" aria-label="GitHub" class="social-link" target="_blank">
+            <svg viewBox="0 0 24 24" class="icon"><path d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.48-1.33-5.48-5.92 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.5.12-3.13 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.63.24 2.83.12 3.13.77.84 1.24 1.92 1.24 3.23 0 4.6-2.81 5.61-5.49 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0012 .5z"/></svg>
+        </a>
+        </div>
+    </div>
+    </section>
+
+    <!-- ===== ABOUT (two-line overlay on background) ===== -->
+    <section id="about" class="stripe about hero-bg" aria-label="About Rahul">
+        <div class="about-overlay">
+        <!-- <p class="kicker">About</p> -->
+        <h2 class="about-line">Software engineer with experience at Tesla and Expedia.</h2>
+        <p class="about-subline">Committed to driving technological advancements and delivering high-quality solutions that enhance user experience and optimize business operations.</p>
+        </div>
+    </section>
+
+
+    <!-- ===== EXPERIENCE GALLERY (logos + modals) ===== -->
+<section id="experience" class="stripe experience">
+    <div class="container">
+      <h2>Experience</h2>
+  
+      <div class="grid logos">
+        <!-- Tesla -->
+        <figure class="tile" data-modal="#expTesla">
+          <img src="./assets/logos/tesla.svg" alt="Tesla logo" />
+          <figcaption>
+            <span class="company">Tesla</span>
+            <span class="role">Software Engineer Intern</span>
+            <span class="dates">May 2025 - Aug 2025 • Fremont, CA</span>
+          </figcaption>
+          <!-- <div class="overlay">View</div> -->
+        </figure>
+  
+        <!-- UIUC -->
+        <figure class="tile" data-modal="#expUiuc">
+          <img src="./assets/logos/expedia.svg" alt="UIUC logo" />
+          <figcaption>
+            <span class="company">Expedia</span>
+            <span class="role"> Software Development Engineer </span>
+            <span class="dates">July 2024 – July 2025 • India</span>
+          </figcaption>
+          <!-- <div class="overlay">View</div> -->
+        </figure>
+  
+        <!-- Splunk (example) -->
+        <figure class="tile" data-modal="#expSplunk">
+          <img src="./assets/logos/expedia.svg" alt="Splunk logo" />
+          <figcaption>
+            <span class="company">Expedia</span>
+            <span class="role"> Software Development Intern </span>
+            <span class="dates">May 2022 - Aug 2022 • India</span>
+          </figcaption>
+          <!-- <div class="overlay">View</div> -->
+        </figure>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===== EXPERIENCE MODALS (reuse existing modal system) ===== -->
+  <div id="expTesla" class="modal" role="dialog" aria-modal="true" aria-labelledby="expTeslaTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="expTeslaTitle">Tesla — Software Engineer Intern</h3>
+      <p class="meta">Summer 2025 • Fremont, CA</p>
+      <ul>
+        <li>Shipped survey platform components (React + .NET), reducing per-survey cost by ~70%.</li>
+        <li>Analytics pipeline, i18n-ready UI; deployed on AWS ECS.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="expUiuc" class="modal" role="dialog" aria-modal="true" aria-labelledby="expUiucTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="expUiucTitle">Expedia - Software Developer</h3>
+      <p class="meta">2024–2025 • Urbana, IL</p>
+      <ul>
+        <li>Built a RAG debugging assistant with BM25 + FAISS fusion and trust-aware UX.</li>
+        <li>Deployed Flask services; improved observability and iteration speed.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="expSplunk" class="modal" role="dialog" aria-modal="true" aria-labelledby="expSplunkTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="expSplunkTitle">Expedia - Software Development Intern</h3>
+      <p class="meta">2024</p>
+      <ul>
+        <li>React/Flask components for internal tooling; performance and DX improvements.</li>
+        <li>Integrated metrics dashboards and feature flags.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="expOther" class="modal" role="dialog" aria-modal="true" aria-labelledby="expOtherTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="expOtherTitle">Your Company — Role Title</h3>
+      <p class="meta">Year • Location</p>
+      <ul>
+        <li>Impact bullet one with a measurable outcome.</li>
+        <li>Impact bullet two with stack/tools.</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+
+
+
+
+    
+    <!-- Experience Detail Modals (reuse your modal system) -->
+    <div id="xpTesla" class="modal" role="dialog" aria-modal="true" aria-labelledby="xpTesla-title" aria-hidden="true">
+        <div class="modal-dialog">
+        <button class="modal-close" aria-label="Close modal">×</button>
+        <h3 id="xpTesla-title">Tesla — Software Engineer Intern</h3>
+        <p>Deep dive: perf budgets, analytics pipeline, component API contracts, and rollout plan.</p>
+        </div>
+    </div>
+    
+    <div id="xpUiuc" class="modal" role="dialog" aria-modal="true" aria-labelledby="xpUiuc-title" aria-hidden="true">
+        <div class="modal-dialog">
+        <button class="modal-close" aria-label="Close modal">×</button>
+        <h3 id="xpUiuc-title">UIUC — Graduate Research Assistant</h3>
+        <p>Retrieval fusion ablations, prompt caching, eval harness, and user trust instrumentation.</p>
+        </div>
+    </div>
+
+    <!-- ===== PROJECTS / CAROUSEL ===== -->
+    <section id="projects" class="stripe projects">
+    <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="carousel" aria-roledescription="carousel">
+        <button class="carousel-nav prev" aria-label="Previous slide" data-dir="-1">&#10094;</button>
+        <div class="carousel-track">
+            <article class="slide">
+            <h3>Survey Platform</h3>
+            <p>React UI, .NET APIs, MySQL, AWS ECS. Cost down 70%.</p>
+            <button class="btn small" data-modal="#modal1">Read more</button>
+            </article>
+            <article class="slide">
+            <h3>Illini Terminal</h3>
+            <p>RAG debugging assistant with BM25+FAISS fusion.</p>
+            <button class="btn small" data-modal="#modal2">Read more</button>
+            </article>
+            <article class="slide">
+            <h3>Git Analyzer</h3>
+            <p>Semantic repo insights and contributor heatmaps.</p>
+            <button class="btn small" data-modal="#modal3">Read more</button>
+            </article>
+        </div>
+        <button class="carousel-nav next" aria-label="Next slide" data-dir="1">&#10095;</button>
+        </div>
+    </div>
+    </section>
+
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="stripe skills">
+    <div class="container">
+      <h2>Skills</h2>
+  
+      <div class="columns">
+        <p><strong>Languages:</strong> C++, Python, TypeScript, Go</p>
+        <p><strong>Frameworks:</strong> React, Flask, .NET, Node</p>
+        <p><strong>Systems / Data:</strong> RAG, FAISS, BM25, Postgres</p>
+        <p><strong>Cloud / DevOps:</strong> AWS, Docker, GitHub Actions, ECS</p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="stripe education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="edu-list">
+        <article class="edu-item">
+          <h3>University of Illinois Urbana-Champaign (UIUC)</h3>
+          <p class="meta">Masters in Computer Science </p>
+          <p> GPA: 4/4 </p>
+          <p> Aug 2024 - Dec 2025</p>
+        </article>
+        <article class="edu-item">
+          <h3>Indraprastha Institute of Information Technology (IIIT-Delhi)</h3>
+          <p class="meta">Bachelors in Computer Science and Applied Mathematics </p>
+          <p> GPA: 9.52/10 </p>
+          <p> Jul 2019 - May 2023</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===== DOCUMENTS (with modal) ===== -->
+  <section id="documents" class="stripe documents">
+    <div class="container">
+      <h2>Documents</h2>
+      <div class="doc-actions">
+        <a class="btn primary" href="./assets/documents/Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        <a class="btn ghost" href="./assets/documents/Transcript.pdf" target="_blank" rel="noopener">View Transcript</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Resume modal -->
+  <div id="modalResume" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalResume-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="modalResume-title">Resume — Rahul Sethi</h3>
+      <p>Full-stack + systems engineer. Interests: distributed systems, HCI-AI, and RAG.</p>
+      <p><a class="btn small primary" href="./assets/resume.pdf" target="_blank" rel="noopener">Open PDF</a></p>
+    </div>
+  </div>
+
+
+  <!-- ===== HTML5 VIDEO ===== -->
+  <section id="video" class="stripe video-section">
+    <div class="container">
+      <h2>Short Demo</h2>
+      <video controls preload="metadata">
+        <source src="./assets/videos/demo.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag.
+      </video>
+    </div>
+  </section>
+
+<!-- ===== CONTACT (simple) ===== -->
+<section id="contact" class="stripe contact-min">
+    <div class="container">
+      <h2>Let’s connect</h2>
+      <p class="lead">Building something, hiring, or up for a collab? <br> I’m interested. Reach me here. </p>
+  
+      <nav class="contact-actions" aria-label="Contact links">
+        <!-- Email -->
+        <a class="contact-chip" href="mailto:rahuls14@illinois.edu" aria-label="Email Rahul">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+          <span>rahuls14@illinois.edu</span>
+        </a>
+  
+        <!-- LinkedIn -->
+        <a class="contact-chip" href="https://www.linkedin.com/in/rahul-07-sethi/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 112.5 6a2.5 2.5 0 012.48-2.5ZM1 8.5h4V21H1V8.5Zm7.5 0h3.8v1.9h.05c.53-.96 1.83-2 3.78-2 4.07 0 4.82 2.68 4.82 6.16V21h-4v-6.5c0-1.55-.03-3.55-2.17-3.55-2.18 0-2.51 1.7-2.51 3.44V21H8.5V8.5Z"/></svg>
+          <span>rahul-07-sethi</span>
+        </a>
+  
+        <!-- GitHub -->
+        <a class="contact-chip" href="https://github.com/RahulSethi07" target="_blank" rel="noopener" aria-label="GitHub profile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A12 12 0 008.2 23.9c.6.1.8-.26.8-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.31.76-1.61-2.67-.3-5.48-1.33-5.48-5.92 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.5.12-3.13 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.63.24 2.83.12 3.13.77.84 1.24 1.92 1.24 3.23 0 4.6-2.81 5.61-5.49 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0012 .5z"/></svg>
+          <span>RahulSethi07</span>
+        </a>
+  
+      </nav>
+    </div>
+  </section>
+  
+  
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="stripe site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Rahul Sethi. All rights reserved.</p>
+      <a class="to-top" href="#intro" aria-label="Back to top">↑</a>
+    </div>
+  </footer>
+
+  <!-- ===== MODALS ===== -->
+  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="modal1-title">Survey Platform</h3>
+      <p>Custom question types, analytics, and cost controls.</p>
+    </div>
+  </div>
+  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="modal2-title">Illini Terminal</h3>
+      <p>Multi-retriever fusion, prompt caching, transparent UX.</p>
+    </div>
+  </div>
+  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close modal">×</button>
+      <h3 id="modal3-title">Git Analyzer</h3>
+      <p>Hotspots, PR velocity, semantic topic clusters.</p>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
 </html>
