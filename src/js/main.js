@@ -1,25 +1,3 @@
-// /* Your JS here. */
-// console.log('Hello World!')
-// document.addEventListener('DOMContentLoaded', () => {
-//     const navbar = document.getElementById('navbar');
-
-//     window.addEventListener('scroll', () => {
-//         if (window.scrollY > 50) {
-//             navbar.style.padding = '0.5rem';
-//         } else {
-//             navbar.style.padding = '1rem';
-//         }
-//     });
-
-//     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//         anchor.addEventListener('click', function (e) {
-//             e.preventDefault();
-//             document.querySelector(this.getAttribute('href')).scrollIntoView({
-//                 behavior: 'smooth'
-//             });
-//         });
-//     });
-// });
 window.history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
