@@ -7,11 +7,20 @@ $accent: #5ae0b5;
 $accent-2: #7aa2f7;
 
 $maxw: 1100px;
+$maxw-large: 1700px;
 $nav-large: 88px;
 $nav-small: 56px;
 
 @mixin container {
   width: min(100% - 2rem, #{$maxw});
+  margin-inline: auto;
+  @media (min-width: 1400px) {
+    width: min(100% - 6rem, #{$maxw-large});
+  }
+}
+
+@mixin container-large {
+  width: min(100% - 2rem, #{$maxw-large});
   margin-inline: auto;
 }
 
@@ -41,6 +50,61 @@ a { color: inherit; }
   h2 { font-size: clamp(1.6rem, 1.5rem + 1vw, 2.2rem); margin: 0 0 1rem; }
   p { color: $muted; line-height: 1.7; }
 }
+.stripe {
+    &.experience {
+        background: $surface !important; // Light background
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      
+      &.projects {
+        background: 
+          linear-gradient(135deg, 
+            rgba(122, 162, 247, 0.03) 0%, 
+            rgba(90, 224, 181, 0.03) 100%),
+          $bg !important; // Dark with subtle gradient
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      &.skills {
+        background: $surface !important;
+      }
+      
+      &.education {
+        background: 
+          radial-gradient(circle at 20% 80%, rgba(90, 224, 181, 0.04), transparent 50%),
+          $bg !important;
+      }
+      
+      &.documents {
+        background: $surface !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    &.video {
+        background: 
+          linear-gradient(45deg, 
+            rgba(90, 224, 181, 0.03) 0%, 
+            rgba(122, 162, 247, 0.03) 100%),
+          $bg !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+      
+    &.contact {
+        background: $surface !important;
+        border-top: 1px solid rgba(122, 162, 247, 0.2);
+    }
+    
+    &.site-footer {
+        background: 
+          linear-gradient(135deg, 
+            rgba(122, 162, 247, 0.05) 0%, 
+            rgba(90, 224, 181, 0.05) 100%),
+          $bg !important;
+        border-top: 2px solid rgba(90, 224, 181, 0.3);
+        padding: 2rem 0;
+    }
+  }
 
 // Navbar
 .site-header { 
@@ -97,17 +161,21 @@ a { color: inherit; }
   span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, $accent, $accent-2); transition: width .15s linear; }
 }
 
-// ===== intro (vertical centering + animation) =====
+// ===== intro =====
 .intro {
   min-height: calc(100vh - #{$nav-large});
   display: grid; place-items: center;
   background:
     radial-gradient(600px 300px at 80% 10%, rgba(90,224,181,.09), transparent 60%),
-    radial-gradient(800px 300px at 10% 30%, rgba(122,162,247,.08), transparent 60%);
+    radial-gradient(800px 300px at 10% 30%, rgba(122,162,247,.08), transparent 60%),
+    $bg !important;
 }
 .intro-inner { 
-    width: min(100% - 2rem, 950px); 
+    width: min(100% - 4rem, 1150px); 
     text-align: center; 
+    @media (min-width: 1400px) {
+      width: min(100% - 8rem, 1350px);
+    }
 }
 .intro-title { 
     margin: 0 0 .5rem; 
@@ -164,13 +232,8 @@ a { color: inherit; }
     }
 }
 
-// ===== About (multi-column) =====
-// .about {
-//   background: $surface;
-//   .columns { column-count: 3; column-gap: 2rem; text-align: left; p { break-inside: avoid; } }
-// }
 
-/* ABOUT — minimal two lines over background image */
+/* ABOUT — over background image */
 .about.hero-bg {
     padding: 0;
     min-height: 52vh;
@@ -217,13 +280,18 @@ a { color: inherit; }
   }
   
 
-/* ===== EXPERIENCE GALLERY (logos) ===== */
+/* ===== EXPERIENCE (logos) ===== */
 .experience {
+    .container {
+        @include container;
+        text-align: center;
+      }
     .grid.logos {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2rem;
-      justify-items: center;    // center tiles themselves
+      justify-items: center;
+      margin: 0 auto;
     }
   
     .tile {
@@ -238,7 +306,7 @@ a { color: inherit; }
       max-width: 320px;
   
       display: grid;
-      place-items: center;       // ✅ centers everything (logo + caption)
+      place-items: center;
   
       text-align: center;
   
@@ -246,7 +314,7 @@ a { color: inherit; }
         width: 160px;
         height: auto;
         display: block;
-        margin: 0 auto;           // ✅ ensures horizontal centering
+        margin: 0 auto; 
         opacity: 1;
         filter: none;
         transition: transform .25s ease, filter .25s ease;
@@ -304,16 +372,20 @@ a { color: inherit; }
       .grid.logos { grid-template-columns: 1fr; }
       .tile img { width: 180px; }
     }
+    @media (min-width: 1280px) {
+      .grid.logos {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+        justify-content: center;
+      }
+    }
   }
   
   
   
-  /* Optional: modal meta text */
   .modal .meta {
     color: $muted;
     margin: .2rem 0 .6rem;
   }
-  
   
   
 // ===== Work (carousel) =====
@@ -323,7 +395,9 @@ a { color: inherit; }
       overflow: hidden;
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.04);
-  
+      display: grid;
+      align-items: center;
+
       .carousel-track {
         display: grid;
         grid-auto-flow: column;
@@ -333,13 +407,14 @@ a { color: inherit; }
   
       .slide {
         padding: 2.4rem;
-        text-align: left;
+        text-align: center;
         min-height: 260px;
         display: grid;
         align-content: center;
+        justify-items: center;
         gap: 0.75rem;
       }
-  
+
       .carousel-nav {
         position: absolute;
         top: 50%;
@@ -356,11 +431,12 @@ a { color: inherit; }
         cursor: pointer;
         transition: background 0.2s ease;
         user-select: none;
-  
+        z-index: 2;
+
         &:hover {
           background: rgba(255, 255, 255, 0.2);
         }
-  
+
         &.prev {
           left: 0.75rem;
         }
@@ -407,14 +483,16 @@ a { color: inherit; }
     .edu-list {
       display: grid;
       gap: 1rem;
-      text-align: left;
+      justify-items: center;
+      text-align: center;
     }
   
     .edu-item {
       background: rgba(255, 255, 255, 0.04);
       border-radius: 12px;
       padding: 1rem;
-  
+      width: min(100%, 620px);
+
       .meta {
         color: $muted;
         margin: 0.3rem 0 0.6rem;
@@ -441,6 +519,9 @@ a { color: inherit; }
     figcaption { padding: .8rem; color: $muted; }
     &:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
   }
+}
+@media (min-width: 1280px) {
+  .gallery .grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 // ===== Video =====
@@ -563,6 +644,19 @@ a { color: inherit; }
         color: $text;
       }
     }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 1rem 0 0;
+
+      li {
+        margin-bottom: .6rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
 // ===== Animations =====
@@ -589,33 +683,33 @@ a { color: inherit; }
     .skills .skills-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
+}
   
-  @media (max-width: 720px) {
-    .nav {
-      grid-template-columns: auto;
-      justify-items: center;
-      height: $nav-small;
-    }
-  
-    .nav-links {
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-  
-    .intro {
-      min-height: calc(100vh - #{$nav-small});
-    }
-  
-    .about .columns {
-      column-count: 1;
-    }
-  
-    .gallery .grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .skills .skills-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+@media (max-width: 720px) {
+.nav {
+    grid-template-columns: auto;
+    justify-items: center;
+    height: $nav-small;
+}
+
+.nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.intro {
+    min-height: calc(100vh - #{$nav-small});
+}
+
+.about .columns {
+    column-count: 1;
+}
+
+.gallery .grid {
+    grid-template-columns: 1fr;
+}
+
+.skills .skills-grid {
+    grid-template-columns: 1fr;
+}
+}

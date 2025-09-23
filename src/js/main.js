@@ -118,8 +118,3 @@ document.addEventListener('keydown', e => {
     $$('.modal.open').forEach(closeModal);
   }
 });
-
-// ===================== FORM (demo only) =====================
-$('.contact-form')?.addEventListener('submit', () => {
-  alert('Thanks! This demo form does not send data.');
-});

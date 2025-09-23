@@ -70,7 +70,6 @@
       <h2>Experience</h2>
   
       <div class="grid logos">
-        <!-- Tesla -->
         <figure class="tile" data-modal="#expTesla">
           <img src="./assets/logos/tesla.svg" alt="Tesla logo" />
           <figcaption>
@@ -81,9 +80,8 @@
           <!-- <div class="overlay">View</div> -->
         </figure>
   
-        <!-- UIUC -->
-        <figure class="tile" data-modal="#expUiuc">
-          <img src="./assets/logos/expedia.svg" alt="UIUC logo" />
+        <figure class="tile" data-modal="#expExpedia">
+          <img src="./assets/logos/expedia.svg" alt="Expedia logo" />
           <figcaption>
             <span class="company">Expedia</span>
             <span class="role"> Software Development Engineer </span>
@@ -92,9 +90,8 @@
           <!-- <div class="overlay">View</div> -->
         </figure>
   
-        <!-- Splunk (example) -->
-        <figure class="tile" data-modal="#expSplunk">
-          <img src="./assets/logos/expedia.svg" alt="Splunk logo" />
+        <figure class="tile" data-modal="#expExpediaIntern">
+          <img src="./assets/logos/expedia.svg" alt="Expedia logo" />
           <figcaption>
             <span class="company">Expedia</span>
             <span class="role"> Software Development Intern </span>
@@ -111,73 +108,49 @@
   <div id="expTesla" class="modal" role="dialog" aria-modal="true" aria-labelledby="expTeslaTitle" aria-hidden="true">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="expTeslaTitle">Tesla — Software Engineer Intern</h3>
+      <h3 id="expTeslaTitle">Tesla - Software Engineer Intern</h3>
       <p class="meta">Summer 2025 • Fremont, CA</p>
       <ul>
-        <li>Shipped survey platform components (React + .NET), reducing per-survey cost by ~70%.</li>
-        <li>Analytics pipeline, i18n-ready UI; deployed on AWS ECS.</li>
+        <li>Contributed to the initial architecture and development of customer and employee survey and feedback management tool leveraging 
+            C#, .NET, React and MySQL resulting in savings of several 100k dollars by replacing Qualtrics licenses.</li>
+        <li>Set up pipelines and integrations with multiple internal teams, ensuring smooth data flow, feedback visibility, and adoption
+            across the organization.</li>
+        <li>Developed complex and dynamic question types to support flexible survey creation, enhancing configurability and overall
+            user experience.</li>
       </ul>
     </div>
   </div>
   
-  <div id="expUiuc" class="modal" role="dialog" aria-modal="true" aria-labelledby="expUiucTitle" aria-hidden="true">
+  <div id="expExpedia" class="modal" role="dialog" aria-modal="true" aria-labelledby="expExpediaTitle" aria-hidden="true">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="expUiucTitle">Expedia - Software Developer</h3>
-      <p class="meta">2024–2025 • Urbana, IL</p>
+      <h3 id="expExpediaTitle">Expedia - Software Developer</h3>
+      <p class="meta">August 2024 – July 2025 • India</p>
       <ul>
-        <li>Built a RAG debugging assistant with BM25 + FAISS fusion and trust-aware UX.</li>
-        <li>Deployed Flask services; improved observability and iteration speed.</li>
+        <li>Engineered a distributed vulnerability management system using Java, Spring Boot, Javascript and AWS to automate detection of host, container, and code vulnerabilities.</li>
+        <li>Built a scalable, fault-tolerant centralized platform with PostgreSQL for data orchestration and Redis for real-time caching, reducing manual vulnerability tracking efforts by 76% and increasing security compliance across multiple teams.</li>
+        <li>Optimized the vulnerability lifecycle from detection to remediation in a distributed environment, leading to faster response
+            times by 50% and improved security posture.</li>
+        <li>Implemented CI/CD pipelines with GitHub Actions and Jenkins, automating deployments.</li>
       </ul>
     </div>
   </div>
   
-  <div id="expSplunk" class="modal" role="dialog" aria-modal="true" aria-labelledby="expSplunkTitle" aria-hidden="true">
+  <div id="expExpediaIntern" class="modal" role="dialog" aria-modal="true" aria-labelledby="expExpediaInternTitle" aria-hidden="true">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="expSplunkTitle">Expedia - Software Development Intern</h3>
-      <p class="meta">2024</p>
+      <h3 id="expExpediaInternTitle">Expedia - Software Development Intern</h3>
+      <p class="meta">May 2022 - Aug 2022</p>
       <ul>
-        <li>React/Flask components for internal tooling; performance and DX improvements.</li>
-        <li>Integrated metrics dashboards and feature flags.</li>
+        <li>Enhanced vulnerability management efficiency by integrating Recoil into the Singularity plugin, reducing resolution time
+            by 30%.</li>
+        <li>Engineered a Delegation feature allowing leaders to delegate risk profiles to developers, improving project throughput and
+            boosting on-time project delivery by 40% over six months.</li>
       </ul>
     </div>
   </div>
-  
-  <div id="expOther" class="modal" role="dialog" aria-modal="true" aria-labelledby="expOtherTitle" aria-hidden="true">
-    <div class="modal-dialog">
-      <button class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="expOtherTitle">Your Company — Role Title</h3>
-      <p class="meta">Year • Location</p>
-      <ul>
-        <li>Impact bullet one with a measurable outcome.</li>
-        <li>Impact bullet two with stack/tools.</li>
-      </ul>
-    </div>
-  </div>
-  
-  
 
 
-
-
-    
-    <!-- Experience Detail Modals (reuse your modal system) -->
-    <div id="xpTesla" class="modal" role="dialog" aria-modal="true" aria-labelledby="xpTesla-title" aria-hidden="true">
-        <div class="modal-dialog">
-        <button class="modal-close" aria-label="Close modal">×</button>
-        <h3 id="xpTesla-title">Tesla — Software Engineer Intern</h3>
-        <p>Deep dive: perf budgets, analytics pipeline, component API contracts, and rollout plan.</p>
-        </div>
-    </div>
-    
-    <div id="xpUiuc" class="modal" role="dialog" aria-modal="true" aria-labelledby="xpUiuc-title" aria-hidden="true">
-        <div class="modal-dialog">
-        <button class="modal-close" aria-label="Close modal">×</button>
-        <h3 id="xpUiuc-title">UIUC — Graduate Research Assistant</h3>
-        <p>Retrieval fusion ablations, prompt caching, eval harness, and user trust instrumentation.</p>
-        </div>
-    </div>
 
     <!-- ===== PROJECTS / CAROUSEL ===== -->
     <section id="projects" class="stripe projects">
@@ -187,18 +160,21 @@
         <button class="carousel-nav prev" aria-label="Previous slide" data-dir="-1">&#10094;</button>
         <div class="carousel-track">
             <article class="slide">
-            <h3>Survey Platform</h3>
-            <p>React UI, .NET APIs, MySQL, AWS ECS. Cost down 70%.</p>
+            <h3>Hybrid Distributed File System</h3>
+            <p>a fault-tolerant distributed file system, combining Hadoop’s block-based replication with
+                Cassandra’s ring-based architecture for high availability.</p>
+            <p>C++, Hadoop, Cassandra, Go</p>
             <button class="btn small" data-modal="#modal1">Read more</button>
             </article>
             <article class="slide">
-            <h3>Illini Terminal</h3>
-            <p>RAG debugging assistant with BM25+FAISS fusion.</p>
+            <h3>Realtime Video Conferencing</h3>
+            <p>Django, AWS EC2, OpenCV</p>
             <button class="btn small" data-modal="#modal2">Read more</button>
             </article>
             <article class="slide">
             <h3>Git Analyzer</h3>
-            <p>Semantic repo insights and contributor heatmaps.</p>
+            <p>LangChain-Powered Semantic Search for Github</p>
+            <p>RAG, LangChain, Python, ChromaDB</p>
             <button class="btn small" data-modal="#modal3">Read more</button>
             </article>
         </div>
@@ -214,10 +190,10 @@
       <h2>Skills</h2>
   
       <div class="columns">
-        <p><strong>Languages:</strong> C++, Python, TypeScript, Go</p>
-        <p><strong>Frameworks:</strong> React, Flask, .NET, Node</p>
-        <p><strong>Systems / Data:</strong> RAG, FAISS, BM25, Postgres</p>
-        <p><strong>Cloud / DevOps:</strong> AWS, Docker, GitHub Actions, ECS</p>
+        <p><strong>Languages:</strong> C++, C#, Java, Python, Javascript, TypeScript, Go</p>
+        <p><strong>Frameworks:</strong> Springboot, .NET, React, Node.js, Restful, Redis</p>
+        <p><strong>Data / Systems:</strong> Postgres, MySQL, Kafka, Spark, Cassandra, Raft</p>
+        <p><strong>Cloud / DevOps:</strong> AWS, GCP, Docker, GitHub Actions, ECS, Kubernetes</p>
       </div>
     </div>
   </section>
@@ -320,22 +296,31 @@
   <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" aria-hidden="true">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="modal1-title">Survey Platform</h3>
-      <p>Custom question types, analytics, and cost controls.</p>
+      <h3 id="modal1-title">HyDFS</h3>
+      <p>• Designed and implemented a fault-tolerant distributed file system, combining Hadoop’s block-based replication with
+        Cassandra’s ring-based architecture for high availability.<br>
+        • Implemented data sharding and multithreading, reducing query latency by 40% and improving throughput for dis-
+        tributed storage.<br>
+        • Integrated data replication, eventual consistency, and partition tolerance ensuring scalability while adhering to the
+        CAP theorem.</p>
     </div>
   </div>
   <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" aria-hidden="true">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close modal">×</button>
-      <h3 id="modal2-title">Illini Terminal</h3>
-      <p>Multi-retriever fusion, prompt caching, transparent UX.</p>
+      <h3 id="modal2-title">Virtue</h3>
+      <p>• Developed a scalable cloud-based video conferencing app using deployed on AWS EC2.<br>
+        • Developed an AI-driven camera selection system using OpenCV deep learning, automatically detecting and switching to the camera the user is facing.<br>
+        • Integrated persistent chat storage using Redis, enabling real-time messaging.</p>
     </div>
   </div>
   <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" aria-hidden="true">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close modal">×</button>
       <h3 id="modal3-title">Git Analyzer</h3>
-      <p>Hotspots, PR velocity, semantic topic clusters.</p>
+      <p>• Built an AI-powered GitHub QA tool using LangChain, ChromaDB for semantic search across public repositories.<br>
+        • Implemented AST-based preprocessing to preserve code structure and documentation context.<br>
+        • Developed a hybrid dense and sparse retrieval pipeline with RAG, enabling accurate, real-time QA across 15 languages.</p>
     </div>
   </div>
 
